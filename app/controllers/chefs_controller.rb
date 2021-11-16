@@ -13,6 +13,10 @@ class ChefsController < ApplicationController
     end
   end
 
+  def show
+    @chef = current_user
+  end
+
   private
 
   def chef_params
