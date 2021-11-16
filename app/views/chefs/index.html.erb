@@ -1,0 +1,12 @@
+<h1>Explore Chefs</h1>
+
+<% @chefs.each do |chef| %>
+  <div>
+
+    <%= link_to chef_path(chef) do %>
+      <h3><%= chef.user.first_name.capitalize %> <%= chef.user.last_name.capitalize %></h3>
+    <% end %>
+    <p>Cuisine: <%= chef.cuisine %></p>
+    <p><%= chef.years_experience %> years of experience </p>
+  </div>
+<% end %>
