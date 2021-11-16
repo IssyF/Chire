@@ -1,0 +1,9 @@
+<div class="container">
+
+<%= simple_form_for(@chef) do |f|%>
+<%= f.input :cuisine, :collection => Chef::CUISINES %>
+<%= f.input :years_experience, as: :numeric %>
+<%= f.submit :Submit, class: 'btn btn-success' %>
+<% end %>
+
+</div>
