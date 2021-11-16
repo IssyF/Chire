@@ -3,10 +3,6 @@ Booking.destroy_all
 Chef.destroy_all
 User.destroy_all
 
-
-cuisine = %w[chinese italian japanese french indian thai british american spanish]
-london_areas = ['Hoxton', 'Brixton', 'Greenwich', 'Chelsea', 'Twickenham', 'Clapham', 'Arsenal', 'Islington']
-
 emma_user = User.create!(first_name: 'Emma', last_name: 'Whittle', email: "emma123@gmail.com", address: '5 Waldon Avenue', password: '123123')
 francis_user = User.create!(first_name: 'Francis', last_name: 'Brown', email: "francis.brown@hotmail.co.uk", address: '65 Cherry Blossom Avenue', password: '123123')
 george_user = User.create!(first_name: 'George', last_name: 'Rush', email: "george1992@gmail.com", address: '40 Kingsland Road', password: '123123')
@@ -17,7 +13,7 @@ tori_user = User.create!(first_name: 'Tori', last_name: 'White', email: "tori.wh
     4.times do
   Chef.create!(
     user_id: User.all.sample.id,
-    cuisine: cuisine.sample,
+    cuisine: Chef::CUISINES.sample,
     years_experience: rand(1..8)
   )
   end

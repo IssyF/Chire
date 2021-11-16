@@ -1,5 +1,5 @@
 class Chef < ApplicationRecord
-  CUISINES = %w[Chinese Italian Japanese French Indian Thai British American Spanish]
+  CUISINES = %w[Chinese Italian Japanese French Indian Thai British American Spanish].freeze
 
   belongs_to :user
   has_many :bookings
