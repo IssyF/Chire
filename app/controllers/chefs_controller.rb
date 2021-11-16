@@ -13,6 +13,10 @@ class ChefsController < ApplicationController
     end
   end
 
+  def index
+    @chefs = Chef.all
+  end
+  
   def show
     @chef = current_user
   end
