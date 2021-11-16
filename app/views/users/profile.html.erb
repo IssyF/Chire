@@ -1,0 +1,17 @@
+<h1>My Profile</h1>
+
+<div>
+  <h2>My Details</h2>
+  <p>First Name: <%= current_user.first_name %></p>
+  <p>Last Name: <%= current_user.last_name %></p>
+  <p>Address: <%= current_user.address %></p>
+</div>
+
+<div>
+  <h2>My bookings</h2>
+  <p>To do once we have bookings functionality - iterate through and display with whether confirmed, click for details</p>
+</div>
+
+<button>
+  <%= link_to "Create Chef Profile", new_chef_path %>
+</button>

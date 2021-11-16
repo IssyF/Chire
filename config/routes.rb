@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'profile', to: 'users#profile'
 
-  resources :users, only: :show
-
   resources :chefs, only: %i[new create index show] do
     resources :bookings, only: %i[new create]
   end
