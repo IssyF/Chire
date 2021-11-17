@@ -1,0 +1,5 @@
+<%= simple_form_for [@chef, @booking ] do |f| %>
+  <%= f.input :start_date_time, label: 'Date and Time', as: :datetime %>
+  <%= f.input :end_date_time, label: 'Date and Time', as: :datetime %>
+  <%= f.submit 'Confirm Booking', class: 'btn btn-info' %>
+<% end %>
