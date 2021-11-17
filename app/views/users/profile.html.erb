@@ -20,11 +20,12 @@
     <div class="card-profile">
       <h2>My Bookings</h2>
       <%@bookings.each do |booking| %>
-        <p>Chef name</p><%=booking.chef.cuisine< %>
-        <p>Cuisine</p>
-        <p>Start time</p>
-        <p>End time</p>
-      <%end  %>
+        <p>Chef name <%=booking.chef.user.first_name %>
+          <%=booking.chef.user.last_name %></p>
+        <p>Cuisine</p><%=booking.chef.cuisine %></p>
+        <p>Start time</p><%=booking.start_date_time %></p>
+        <p>End time</p><%=booking.end_date_time %></p>
+      <% end %>
 
     </div>
 
