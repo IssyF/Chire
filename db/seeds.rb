@@ -1,4 +1,3 @@
-
 Booking.destroy_all
 Chef.destroy_all
 User.destroy_all
@@ -10,19 +9,19 @@ ana_user = User.create!(first_name: 'Ana', last_name: 'Gilmore', email: "ana.gil
 tony_user = User.create!(first_name: 'Tony', last_name: 'Piper', email: "tony1991@gmail.com", address: '541 Oxford Street', password: '123123')
 tori_user = User.create!(first_name: 'Tori', last_name: 'White', email: "tori.white@hotmail.com", address: '12 Wood End', password: '123123')
 
-    4.times do
+4.times do
   Chef.create!(
     user_id: User.all.sample.id,
     cuisine: Chef::CUISINES.sample,
     years_experience: rand(1..8)
   )
-  end
+end
 
-  5.times do
-    Booking.create!(
+5.times do
+  Booking.create!(
     user_id: User.all.sample.id,
     #start_date_time:
     #end_date_time:
     chef_id: Chef.where("id != user_id").sample.id
-    )
+  )
 end

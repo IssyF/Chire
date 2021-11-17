@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @chef = Chef.find(params[:chef_id])
   end
 
   def create
@@ -14,4 +15,28 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
+  #def edit
+    # @booking = Booking.find(params[:id])
+  #end
+
+  #def update
+    #@booking = Booking.find(params[:id])
+    #if @booking.update(booking_params)
+      #redirect_to profile_path
+    #else
+      #render :edit
+  #end
+
+  #def destroy
+    #@booking = Booking.find(params[:id])
+    #@booking.destroy
+    #redirect_to profile_path
+  #end
+
+#private
+
+ #def strong_params
+  #params.require(:booking).permit(:start_date_time, :end_date_time)
+
 end
