@@ -1,17 +1,32 @@
-<h1>My Profile</h1>
+<%# put in header/banner once created %>
 
-<div>
-  <h2>My Details</h2>
-  <p>First Name: <%= current_user.first_name %></p>
-  <p>Last Name: <%= current_user.last_name %></p>
-  <p>Address: <%= current_user.address %></p>
+<div class="container">
+  <h1>My Profile</h1>
+
+  <div class="user-profile-avatar">
+    <%= image_tag "avatar.jpg", alt:"avatar" %>
+  </div>
+
+  <div class="user-profile-image">
+    <img src="https://images.unsplash.com/photo-1535473895227-bdecb20fb157?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHNldCUyMHRhYmxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="food">
+  </div>
+
+  <div class="cards container">
+    <div class="card-profile">
+      <h2>My Details</h2>
+      <p>First Name: <%= current_user.first_name %></p>
+      <p>Last Name: <%= current_user.last_name %></p>
+      <p>Address: <%= current_user.address %></p>
+    </div>
+
+    <div class="card-profile">
+      <h2>My Bookings</h2>
+      <p>TO DO</p>
+    </div>
+
+    <%= link_to "Create Chef Profile", new_chef_path, class:"btn btn-success create-chef" %>
+
+  </div>
+
+
 </div>
-
-<div>
-  <h2>My bookings</h2>
-  <p>To do once we have bookings functionality - iterate through and display with whether confirmed, click for details</p>
-</div>
-
-<button>
-  <%= link_to "Create Chef Profile", new_chef_path %>
-</button>
