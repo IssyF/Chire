@@ -1,4 +1,6 @@
 class ChefsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def new
     @chef = Chef.new
   end
@@ -16,7 +18,7 @@ class ChefsController < ApplicationController
   def index
     @chefs = Chef.all
   end
-  
+
   def show
     @chef = current_user
   end
