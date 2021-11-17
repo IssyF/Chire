@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def profile
     current_user
-    @bookings= Booking.where(curent_user.id == user_id)
+    @bookings = Booking.where(user_id: current_user)
   end
 
 end
