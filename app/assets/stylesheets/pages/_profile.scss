@@ -1,61 +1,56 @@
 .user-profile-avatar img {
-  border-radius: 50%;
-  height: 100px;
-  position: absolute;
-  left: 37.5%;
-  border: 1.5px solid white;
-}
+    border-radius: 50%;
+    height: 100px;
+    position: absolute;
+    left: 37.5%;
+    border: 1.5px solid white;
+  }
 
-.user-profile-avatar {
-  height: 100px;
-  position: relative;
-  top: 50px;
-  // margin-top: 0px;
-}
+  .user-profile-avatar {
+    height: 100px;
+    position: relative;
+    top: 50px;
+  }
 
-// .user-profile-image {
-//   margin-top: 0px;
-// }
+  .user-profile-image img {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+    margin-bottom: 16px;
+  }
 
-.user-profile-image img {
-  width: 100%;
-  object-fit: cover;
-  height: 200px;
-  margin-bottom: 16px;
-}
+  .cards {
+    align-items: center;
+    width: 100%;
+  }
 
-.cards {
-  align-items: center;
-  width: 100%;
-}
+  .card-profile {
+    background-color: white;
+    align-items: center;
+    flex: 1;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgba(200, 200, 200, 0.5);
+  }
 
-.card-profile {
-  background-color: white;
-  align-items: center;
-  flex: 1;
-  padding: 8px;
-  margin-bottom: 16px;
-  border-radius: 4px;
-  box-shadow: 2px 2px 8px rgba(200, 200, 200, 0.5);
-}
+  .card-profile h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    margin-top: 8px;
 
-.card-profile h2 {
-  font-size: 20px;
-  margin-bottom: 16px;
-  margin-top: 8px;
+  }
 
-}
+  .card-profile p {
+    font-size: 12px;
+  }
 
-.card-profile p {
-  font-size: 12px;
-}
+  .create-chef {
+    width: 100%;
+    margin-bottom: 24px;
+  }
 
-.create-chef {
-  width: 100%;
-  margin-bottom: 24px;
-}
-
-h1 {
-  margin-top: 16px;
-  margin-bottom: 0px;
-}
+  h1 {
+    margin-top: 16px;
+    margin-bottom: 0px;
+  }
