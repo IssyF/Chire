@@ -19,7 +19,13 @@
 
     <div class="card-profile">
       <h2>My Bookings</h2>
-      <p>TO DO</p>
+      <%@bookings.each do |booking| %>
+        <p>Chef name</p><%=booking.chef.cuisine< %>
+        <p>Cuisine</p>
+        <p>Start time</p>
+        <p>End time</p>
+      <%end  %>
+
     </div>
 
     <%= link_to "Create Chef Profile", new_chef_path, class:"btn btn-success create-chef" %>
