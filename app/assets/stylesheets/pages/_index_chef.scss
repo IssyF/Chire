@@ -1,0 +1,41 @@
+// Import page-specific CSS files here.
+@import "home";
+
+.chef-index-container {
+  margin-left: 5px;
+}
+
+.chef-index-cards {
+  background-color: white;
+  padding: 8px;
+  margin: 8px auto;
+  color: black;
+  height: 380px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.chef-index-detail a {
+  text-decoration: none;
+}
+
+.chef-index-name {
+  color: black;
+  padding-top: 5px;
+}
+
+.chef-index-img {
+  height: 100%;
+}
+
+.chef-index-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+
+p {
+  margin: 4px;
+}
