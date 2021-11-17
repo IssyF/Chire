@@ -34,9 +34,10 @@ class BookingsController < ApplicationController
     #redirect_to profile_path
   #end
 
-#private
+  private
 
- #def strong_params
-  #params.require(:booking).permit(:start_date_time, :end_date_time)
+  def booking_params
+    params.require(:booking).permit(:start_date_time, :end_date_time)
+  end
 
 end
