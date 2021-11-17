@@ -1,11 +1,15 @@
-.chef-profile-avatar img {
+.chef-profile-avatar {
   border-radius: 50%;
   height: 100px;
   position: absolute;
-  left: 50%;
-  top: -100px;
+  left: calc(50% - 50px);
+  top:-50px;
+  border: 1px solid white;
+  // position: center;
 }
 
 .chef-profile-food-image {
   margin-top: 50px;
+  padding: 4px;
+  position: relative;
 }

@@ -1,14 +1,18 @@
 <div class="container chef-profile-container">
-  <h1> <%= @chef.first_name %> <%= @chef.last_name %> </h1>
-
-  <div class="chef-profile-avatar">
-    <img src="https://images.unsplash.com/photo-1568822617270-2c1579f8dfe2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80" alt="profile picture" height="300">
-  </div>
+  <h1> <%= @chef.user.first_name %> <%= @chef.user.last_name %> </h1>
 
   <div class="chef-profile-food-image">
-  <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" alt="food">
+  <img src="https://images.unsplash.com/photo-1568822617270-2c1579f8dfe2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80" alt="profile picture" class="chef-profile-avatar" height="300">
+  <img src="https://images.unsplash.com/photo-1598449426314-8b02525e8733?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1326&q=80" alt="food"
+  style="width: 100%; height: auto;">
   </div>
 
+
+<div class="d-flex justify-content-center">
+<%= link_to "Make a new booking", new_chef_booking_path(@chef), class:"btn btn-success"%>
+</div>
+
   <h2>Bio</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo deserunt architecto pariatur? Eius id velit cumque laboriosam error explicabo! Quaerat odit est voluptates inventore cum architecto perspiciatis ipsum illum animi.</p>
+  <p>All the best ingredients and a selection of personal recipies to rival any high street restaurant will guarantee a delicious meal.
+  Vegan, vegetarian meals as well as makimng sure all </p>
 </div>

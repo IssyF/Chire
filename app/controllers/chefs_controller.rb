@@ -20,7 +20,7 @@ class ChefsController < ApplicationController
   end
 
   def show
-    @chef = current_user
+    @chef = Chef.find(params[:id])
   end
 
   private
