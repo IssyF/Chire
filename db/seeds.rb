@@ -7,7 +7,7 @@ francis_user = User.create!(first_name: 'Francis', last_name: 'Brown', email: "f
 george_user = User.create!(first_name: 'George', last_name: 'Rush', email: "george1992@gmail.com", address: '40 Kingsland Road', password: '123123')
 ana_user = User.create!(first_name: 'Ana', last_name: 'Gilmore', email: "ana.gilmore@hotmail.com", address: '1 Fleet Street', password: '123123')
 tony_user = User.create!(first_name: 'Tony', last_name: 'Piper', email: "tony1991@gmail.com", address: '541 Oxford Street', password: '123123')
-tori_user = User.create!(first_name: 'Tori', last_name: 'White', email: "tori.white@hotmail.com", address: '12 Wood End', password: '123123')
+tori_user = User.create!(first_name: 'Tori', last_name: 'White', email: "address: '12 Wood End', password: '123123')
 
 4.times do
   Chef.create!(
