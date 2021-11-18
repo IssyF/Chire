@@ -22,7 +22,8 @@
 
 .chef-index-name {
   color: black;
-  padding-top: 5px;
+  padding-top: 8px;
+  font-size: 32px;
 }
 
 .chef-index-img {
@@ -36,7 +37,11 @@
   margin: 0 auto;
 }
 
-
 p {
-  margin: 4px;
+  margin: 2px;
+}
+
+.search-bar {
+  margin: 8px 0px;
+  width: 98%;
 }

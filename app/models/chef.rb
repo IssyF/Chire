@@ -6,4 +6,12 @@ class Chef < ApplicationRecord
 
   validates :cuisine, presence: true, inclusion: { in: CUISINES }
   validates :years_experience, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_cuisine,
+    against: [ :cuisine ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
