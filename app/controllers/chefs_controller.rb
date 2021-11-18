@@ -2,6 +2,7 @@ class ChefsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def new
+    redirect_to profile_path, alert: "You're already a chef!" if current_user.chef
     @chef = Chef.new
   end
 

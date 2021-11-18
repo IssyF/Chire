@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'profile', to: 'users#profile'
+  get 'chefs/:id/bookings/index', to: 'bookings#schedule', as: 'chefs_schedule'
 
   resources :chefs, only: %i[new create index show] do
     resources :bookings, only: %i[new create]
