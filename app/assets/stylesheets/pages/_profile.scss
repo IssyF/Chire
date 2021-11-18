@@ -1,15 +1,10 @@
-.user-profile-avatar img {
-    border-radius: 50%;
-    height: 100px;
-    position: absolute;
-    left: 37.5%;
-    border: 1.5px solid white;
-  }
-
-  .user-profile-avatar {
-    height: 100px;
-    position: relative;
-    top: 50px;
+.user-profile-avatar {
+   border-radius: 50%;
+  height: 100px;
+  position: absolute;
+  left: calc(50% - 50px);
+  top:-50px;
+  border: 1px solid white;
   }
 
   .profile-header {
@@ -25,16 +20,10 @@
     text-decoration: none;
   }
 
-  .user-profile-image img {
-    width: 100%;
-    object-fit: cover;
-    height: 200px;
-    margin-bottom: 16px;
-  }
-
   .cards {
     align-items: center;
     width: 100%;
+    padding: 0;
   }
 
   .card-profile {
