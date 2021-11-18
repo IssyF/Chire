@@ -9,7 +9,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     @chef.user = current_user
     if @chef.save
-      redirect_to chef_path(@chef)
+      redirect_to chef_path(@chef), alert: "You successfully created a new chef profile!"
     else
       render :new
     end
