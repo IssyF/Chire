@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
+
   # Only code edit and update for a diner if we have time at the end - need update to change confirmed? boolean
-  resources :bookings, only: %i[destroy edit update show]
+  resources :bookings, only: %i[destroy edit update show index]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
