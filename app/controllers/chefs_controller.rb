@@ -26,6 +26,7 @@ class ChefsController < ApplicationController
 
   def show
     @chef = Chef.find(params[:id])
+    #@average = @chef.average_review
   end
 
   private
