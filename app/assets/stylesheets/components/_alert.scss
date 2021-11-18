@@ -1,6 +1,17 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
   z-index: 1000;
+}
+
+.alert-primary,
+.alert-success,
+.alert-warning,
+.alert-danger,
+.alert-info{
+    background-color: rgba(52, 190, 130, 0.75);
+    border:rgba(52, 190, 130, 0.75);
+    color:rgb(18, 92, 19);
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
 }
