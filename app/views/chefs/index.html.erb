@@ -1,19 +1,49 @@
-<% img = ['https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80', 'https://images.unsplash.com/photo-1604328471151-b52226907017?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80', 'https://images.unsplash.com/photo-1571805529673-0f56b922b359?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80', 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80']  %>
+<% img = [
+'https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+'https://images.unsplash.com/photo-1604328471151-b52226907017?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80',
+'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80',
+'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80',
+'https://images.unsplash.com/photo-1447279506476-3faec8071eee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGZvb2QlMjBjaGVmfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+'https://images.unsplash.com/photo-1571805529673-0f56b922b359?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80',
+'https://images.unsplash.com/photo-1605522469906-3fe226b356bc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Y29va2luZ3xlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+'https://images.unsplash.com/photo-1514986888952-8cd320577b68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29va2luZ3xlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60',
+'https://images.unsplash.com/photo-1605522561233-768ad7a8fabf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29va2luZ3xlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+'https://images.unsplash.com/photo-1605522508768-f8697d6e8e24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNvb2tpbmd8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
+]  %>
 
 <div class='chef-index-container'>
-<h1>Explore Chefs</h1>
+  <h1>Explore Chefs</h1>
 
-<% @chefs.each do |chef| %>
-  <div class='chef-index-cards'>
-    <%= link_to(image_tag(img.sample), chef_path(chef), class: "chef-index-img") %>
-    <div class='chef-index-detail'>
-      <%= link_to chef_path(chef) do %>
-        <h3 class='chef-index-name'><%= chef.user.first_name.capitalize %> <%= chef.user.last_name.capitalize %></h3>
-      <% end %>
-      <p>Cuisine: <%= chef.cuisine %></p>
-      <p>Experience: <%= chef.years_experience %> years</p>
-      <p>Rating: <%= [3, 4, 5].sample %>*</p>
-    </div>
+  <div>
+    <%= form_tag chefs_path, class: "search-bar d-flex", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search by cuisine"
+      %>
+      <%= submit_tag "Search", class: "btn btn-success" %>
+    <% end %>
   </div>
-<% end %>
+
+  <% if @chefs == []  %>
+    <p>Sorry, no chefs offering that cuisine.</p>
+    <%= link_to "Browse all chefs", chefs_path %>
+  <% end %>
+
+  <% img_counter = 0 %>
+  <% @chefs.each do |chef| %>
+    <div class='chef-index-cards'>
+      <%= link_to(image_tag(img[img_counter]), chef_path(chef), class: "chef-index-img") %>
+      <div class='chef-index-detail'>
+        <%= link_to chef_path(chef) do %>
+          <h3 class='chef-index-name'><%= chef.user.first_name.capitalize %> <%= chef.user.last_name.capitalize %></h3>
+        <% end %>
+        <p>Cuisine: <%= chef.cuisine %></p>
+        <p>Experience: <%= chef.years_experience %> years</p>
+        <p>Rating: <%= [3, 4, 5].sample %>*</p>
+        <%# add price per hour once it's in the chefs table %>
+        <% img_counter += 1 %>
+      </div>
+    </div>
+  <% end %>
 </div>
