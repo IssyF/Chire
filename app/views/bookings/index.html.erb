@@ -3,11 +3,10 @@
     <%@bookings.each do |booking| %>
       <div class="booking-index-card">
         <h6 class="booking-index-date"><%=booking.start_date_time.strftime("%b %d, %Y") %></h6>
-        <p>Chef: <span class="booking-index-chef-name"><%=booking.chef.user.first_name %>
-        <%=booking.chef.user.last_name %></span></p>
-        <p>Cuisine: <%=booking.chef.cuisine %></p>
-        <p>Start time: <%=booking.start_date_time.strftime("%l:%M %p") %></p>
-        <p>Duration: <%=booking.duration %> hours</p>
+        <p>👩‍🍳 <%=booking.chef.user.first_name %> <%=booking.chef.user.last_name %></p>
+        <p>🍴 <%=booking.chef.cuisine %></p>
+        <p>🕓 <%=booking.start_date_time.strftime("%l:%M %p") %></p>
+        <p>⏳ <%=booking.duration %> hours</p>
         <p class="booking-index-book-again"><%= link_to "Book again", new_chef_booking_path(booking.chef_id) %></p>
       </div>
     <% end %>
