@@ -40,7 +40,7 @@
         <% end %>
         <p>Cuisine: <%= chef.cuisine %></p>
         <p>Experience: <%= chef.years_experience %> years</p>
-        <p>Rating: <%= [3, 4, 5].sample %>*</p>
+        <p>Rating: <% [3, 4, 5].sample.times do %>⭐️ <% end %></p>
         <%# add price per hour once it's in the chefs table %>
         <% img_counter += 1 %>
       </div>
