@@ -16,12 +16,3 @@ tori_user = User.create!(first_name: 'Tori', last_name: 'White', email: "tori@gm
     years_experience: rand(1..8)
   )
 end
-
-5.times do
-  Booking.create!(
-    user_id: User.all.sample.id,
-    #start_date_time:
-    #end_date_time:
-    chef_id: Chef.where("id != user_id").sample.id
-  )
-end
