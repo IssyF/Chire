@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to profile_path
     else
-      render 'users#profile'
+      render :new
     end
   end
 
