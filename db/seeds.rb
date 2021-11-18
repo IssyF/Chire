@@ -13,6 +13,7 @@ tori_user = User.create!(first_name: 'Tori', last_name: 'White', email: "tori@gm
   Chef.create!(
     user_id: User.all.sample.id,
     cuisine: Chef::CUISINES.sample,
-    years_experience: rand(1..8)
+    years_experience: rand(1..8),
+    hourly_rate: rand(25..100)
   )
 end
