@@ -16,32 +16,32 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+  
   def index
     @bookings = Booking.all
   end
 
-  #def edit
-    # @booking = Booking.find(params[:id])
-  #end
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to profile_path
+    else
+      render :edit
+    end
+  end
 
-  #def update
-    #@booking = Booking.find(params[:id])
-    #if @booking.update(booking_params)
-      #redirect_to profile_path
-    #else
-      #render :edit
-  #end
-
-  #def destroy
-    #@booking = Booking.find(params[:id])
-    #@booking.destroy
-    #redirect_to profile_path
-  #end
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to profile_path
+  end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date_time, :end_date_time)
+    params.require(:booking).permit(:start_date_time, :duration)
   end
-
 end
