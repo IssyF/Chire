@@ -17,16 +17,8 @@
       <p>Address: <%= current_user.address %></p>
     </div>
 
-    <div class="card-profile">
-      <h2>My Bookings</h2>
-      <%@bookings.each do |booking| %>
-        <p>Chef name <%=booking.chef.user.first_name %>
-          <%=booking.chef.user.last_name %></p>
-        <p>Cuisine</p><%=booking.chef.cuisine %></p>
-        <p>Start time</p><%=booking.start_date_time %></p>
-        <p>End time</p><%=booking.end_date_time %></p>
-      <% end %>
-
+    <div>
+    <%= link_to "View my bookings", bookings_path %>
     </div>
 
     <%= link_to "Create Chef Profile", new_chef_path, class:"btn btn-success create-chef" %>
