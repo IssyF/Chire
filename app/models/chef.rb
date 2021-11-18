@@ -1,8 +1,9 @@
 class Chef < ApplicationRecord
-  CUISINES = %w[American🍔 British🍖 Chinese🥡 French🥖 Indian🍚 Italian🍝 Japanese🍣 Spanish🥘 Thai🍢].freeze
+  CUISINES = %w[Chinese Italian Japanese French Indian Thai British American Spanish].freeze
 
   belongs_to :user
   has_many :bookings
+  has_many :reviews, through: :bookings
 
   validates :cuisine, presence: true, inclusion: { in: CUISINES }
   validates :years_experience, presence: true
@@ -13,5 +14,4 @@ class Chef < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
 end

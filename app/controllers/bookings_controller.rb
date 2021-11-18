@@ -24,10 +24,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def schedule
-
-  end
-
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
@@ -46,6 +42,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :time, :duration)
+    params.require(:booking).permit(:date, :time, :duration, :review_rating, :review_content)
   end
 end
