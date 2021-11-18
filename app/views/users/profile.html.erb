@@ -1,5 +1,9 @@
 <div class="container">
-  <h1>My Profile</h1>
+  <div class="profile-header">
+    <h1>My Profile</h1>
+
+    <h5><%= link_to "View my bookings", bookings_path %></h5>
+  </div>
 
   <div class="user-profile-avatar">
     <%= image_tag "avatar.jpg", alt:"avatar" %>
@@ -17,11 +21,7 @@
       <p>Address: <%= current_user.address %></p>
     </div>
 
-    <div>
-    <%= link_to "View my bookings", bookings_path %>
-    </div>
-
-    <%= link_to "Create Chef Profile", new_chef_path, class:"btn btn-success create-chef" %>
+  <%= link_to "Create Chef Profile", new_chef_path, class:"btn btn-success create-chef" %>
 
   </div>
 </div>
