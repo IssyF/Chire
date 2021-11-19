@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "chirelogo.png" %>
   <% end %>
@@ -13,9 +13,9 @@
       </div>
     </button>
   <% else %>
-    <li class="nav-item">
+    <div class="nav-item">
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      </li>
+      </div>
   <% end %>
 
 
