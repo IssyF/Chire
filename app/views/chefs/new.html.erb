@@ -1,10 +1,10 @@
 <div class="container">
-<h1 class=top_page_title>New Chef Details</h1>
+  <h1 class=top_page_title>New Chef Details</h1>
 
-<%= simple_form_for(@chef) do |f|%>
-<%= f.input :cuisine, :collection => Chef::CUISINES %>
-<%= f.input :years_experience, as: :numeric %>
-<%= f.input :hourly_rate, as: :numeric %>
-<%= f.submit :Submit, class: 'btn btn-success' %>
-<% end %>
+  <%= simple_form_for(@chef) do |f|%>
+    <%= f.input :cuisine, :collection => Chef::CUISINES %>
+    <%= f.input :years_experience, as: :numeric %>
+    <%= f.input :hourly_rate, as: :numeric %>
+    <%= f.submit :Submit, class: 'btn btn-success' %>
+  <% end %>
 </div>

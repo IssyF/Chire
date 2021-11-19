@@ -10,7 +10,10 @@ Rails.application.routes.draw do
 
 
   # Only code edit and update for a diner if we have time at the end - need update to change confirmed? boolean
-  resources :bookings, only: %i[destroy edit update show index]
+  resources :bookings, only: %i[destroy edit update show index] do
+    resources :reviews, only: %i[new create index]
+  end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

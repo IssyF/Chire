@@ -8,7 +8,10 @@
         <p>📅 <%=booking.date.strftime("%b %d, %Y") %></p>
         <p>🕓 <%=booking.time.strftime("%l:%M %p") %></p>
         <p>⏳ <%=booking.duration %> hours</p>
-        <p class="booking-index-book-again"><%= link_to "Book again", new_chef_booking_path(booking.chef_id) %></p>
+        <div class="block-inline d-flex justify-content-between align-items-center booking-links">
+          <p class="booking-index-book-again"><%= link_to "Book again", new_chef_booking_path(booking.chef_id) %></p>
+          <p class="booking-index-leave-review"><%= link_to "Leave a review", new_booking_review_path(booking) %></p>
+        </div>
       </div>
     <% end %>
 </div>
