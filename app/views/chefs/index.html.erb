@@ -15,7 +15,7 @@
   <h1>Explore Chefs</h1>
 
   <div>
-    <%= form_tag chefs_path, class: "search-bar d-flex", method: :get do %>
+    <%= form_tag chefs_path, class: "search-bar d-flex justify-content-between", method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
