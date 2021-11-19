@@ -12,7 +12,7 @@
         <p>⏳ <%=booking.duration %> hours</p>
         <div class="booking-links d-flex justify-content-between">
           <p class="booking-index-book-again"><%= link_to "Book again", new_chef_booking_path(booking.chef_id) %></p>
-          <% if booking.date > Time.now %>
+          <% if booking.date < Time.now %>
             <p class="booking-index-leave-review"><%= link_to "Leave a review", new_booking_review_path(booking) %></p>
           <% end %>
         </div>
