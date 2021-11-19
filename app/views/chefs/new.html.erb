@@ -4,7 +4,7 @@
 <%= simple_form_for(@chef) do |f|%>
 <%= f.input :cuisine, :collection => Chef::CUISINES %>
 <%= f.input :years_experience, as: :numeric %>
-<%= f.input :hourly_rate, as: :numeric %>
+<%= f.input :hourly_rate, as: :numeric, label: 'Hourly Rate (£)' %>
 <%= f.submit :Submit, class: 'btn btn-success' %>
 <% end %>
 </div>
