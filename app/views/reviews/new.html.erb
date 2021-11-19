@@ -1,9 +1,9 @@
 <div class="modal-body">
-                  <%= simple_form_for [@booking, @review] do |f| %>
-                  <%= f.input :review_content, label: "Tell us more" %>
-                  <%= f.input :review_rating, collection: (1..5).to_a, label: "Rate your experience" %>
-                </div>
-                <div class="modal-footer">
-                  <%= f.button :submit, class: "btn btn-success modal-footer-button" %>
-                  <% end %>
-                  </div>
+  <%= simple_form_for [@booking, @review] do |f| %>
+  <%= f.input :review_content, label: "Tell us more" %>
+  <%= f.input :review_rating, collection: (1..5).to_a, label: "Rate your experience" %>
+<%# </div>
+<div class="modal-footer"> %>
+  <%= f.button :submit, class: "btn btn-success modal-footer-button" %>
+  <% end %>
+</div>
