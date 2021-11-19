@@ -16,6 +16,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def schedule
+    # @bookings = Booking.where(chef_id: current_user.chef.id)
+    @bookings = current_user.chef.bookings
+  end
+
   def edit
     @booking = Booking.find(params[:id])
   end
