@@ -16,4 +16,13 @@
   <p>All the very best ingredients and a selection of my own personal recipies to rival any high street restaurant. <br>
   This will certainly guarantee you a delicious meal! <br> There is a wide range of options to suit including lots of
   vegan and vegetarian meals. </p>
+  <br>
+  <h2>Reviews</h2>
+  <% @chef.bookings.each do |booking| %>
+    <% if booking.review.present? %>
+      <p><%= booking.review.review_content %></p>
+      <p><% booking.review.review_rating.times do %>⭐️ <% end %></p>
+    <% end %>
+  <% end %>
+
 </div>
