@@ -2,7 +2,6 @@
   <div class="profile-header">
     <h1>My Profile</h1>
 
-    <h5><%= link_to "View my bookings", bookings_path %></h5>
   </div>
 
   <div class="chef-profile-food-image">
@@ -18,8 +17,9 @@
       <p>Address: <%= current_user.address %></p>
     </div>
 
+<h5><%= link_to "View my bookings", bookings_path, class:"btn btn-success create-chef" %></h5>
 <% if current_user.chef != nil %>
-    <%= link_to "View my schedule", chefs_schedule_path(current_user.chef.id), class:"btn btn-success create-chef" %>
+    <%= link_to "View my schedule", chefs_schedule_path(current_user.chef.id), class:"btn btn-success create-chef-new" %>
   <% else %>
     <%= link_to "Create Chef Profile", new_chef_path, class:"btn btn-success create-chef" %>
 <% end %>
