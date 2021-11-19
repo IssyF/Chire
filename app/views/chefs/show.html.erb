@@ -21,6 +21,11 @@
   vegan and vegetarian meals. </p>
   <br>
   <h2>Reviews</h2>
+
+  <% if @chef.bookings.all? { |booking| booking.review.nil? } %>
+    <h5>No reviews yet.</h5>
+  <% end %>
+
   <% @chef.bookings.each do |booking| %>
     <% if booking.review.present? %>
       <p><%= booking.review.review_content %></p>
